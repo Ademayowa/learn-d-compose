@@ -18,7 +18,10 @@ services:
       retries: 5
 
   app:
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/job-board-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/learn-d-compose:latest
     container_name: job-board-app
     ports:
       - "8080:8080"
@@ -29,15 +32,6 @@ services:
       postgres:
         condition: service_healthy
     restart: always
-
-  go-api:
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/job-board:latest
-    container_name: go-api-container
-    ports:
-      - "8081:8080"
-    volumes:
-      - ./data:/root/data
-    restart: unless-stopped
 
 volumes:
   postgres_data:
