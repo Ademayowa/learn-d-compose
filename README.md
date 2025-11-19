@@ -41,7 +41,7 @@ echo "POSTGRES_PASSWORD=mysecurepassword123" > .env
 ### 3. Running Docker compose to start all services
 
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
 ### 3. Test the endpoint
