@@ -73,3 +73,51 @@ __pycache__/
 
 # API test directory
 /api-test/
+
+# ===============================
+# Terraform files to ignore
+# ===============================
+
+# Terraform directory (contains large provider plugins)
+**/.terraform/*
+**/.terraform/
+
+# Local Terraform state and backup files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# Terraform variables (may contain secrets)
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Local override and auto-generated files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform lock file (optional - some teams commit this)
+.terraform.lock.hcl
+
+# Plan output files
+*.tfplan
+*.tfplan.json
+
+# Deployment packages or zips
+*.zip
+deployment.zip
+
+# Terraform modules directory
+.terraform.modules/
+
+# Terraform plugin cache
+.terraform.tfstate.lock.info
+
+# But keep state-setup state tracked
+!terraform/state-setup/terraform.tfstate
+!terraform/state-setup/terraform.tfstate.backup
