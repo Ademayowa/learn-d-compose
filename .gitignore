@@ -57,6 +57,7 @@ Thumbs.db
 # Environment variable files
 .env
 .env.*
+.env.test
 
 # Generated files (Protobuf, etc.)
 *.pb.go
