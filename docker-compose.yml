@@ -18,9 +18,7 @@ services:
       retries: 5
 
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # Don't build locally in production, just pull from ECR
     image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/learn-d-compose:latest
     container_name: job-board-app
     ports:
