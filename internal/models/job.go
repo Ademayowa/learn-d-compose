@@ -30,8 +30,7 @@ func (job *Job) Save() error {
 // Retrieves all jobs from the database
 func GetAll() ([]Job, error) {
 	query := `
-		SELECT * FROM jobs
-		ORDER BY title ASC
+		SELECT * FROM jobs ORDER BY title ASC
 	`
 
 	rows, err := db.DB.Query(query)
