@@ -1,6 +1,8 @@
-# Build stage
-FROM golang:1.21-alpine AS builder
+FROM golang:1.23-alpine AS builder
 WORKDIR /app
+
+# Set GOTOOLCHAIN to allow using newer Go version features
+ENV GOTOOLCHAIN=auto
 
 # Copy and download dependencies
 COPY go.mod go.sum ./

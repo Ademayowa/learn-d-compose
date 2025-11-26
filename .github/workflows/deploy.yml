@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [main]  # Deploy only from main branch
   pull_request:
     branches: [main]
 
@@ -37,7 +37,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.25'
+          go-version: '1.25'  # Use pre-release version in CI
       
       - name: Cache Go modules
         uses: actions/cache@v3
