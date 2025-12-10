@@ -58,6 +58,7 @@ Thumbs.db
 .env
 .env.*
 .env.test
+!.env.example
 
 # Generated files (Protobuf, etc.)
 *.pb.go
