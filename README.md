@@ -35,7 +35,7 @@ go mod tidy
 ### 2. Create .env file
 
 ```bash
-echo "POSTGRES_PASSWORD=mysecurepassword123" > .env
+cp .env.example .env && echo "POSTGRES_PASSWORD=mysecurepassword123" >> .env
 ```
 
 ### 3. Running Docker compose to start all services

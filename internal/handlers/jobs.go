@@ -14,13 +14,13 @@ func createJob(ctx *gin.Context) {
 
 	err := ctx.ShouldBindJSON(&job)
 	if err != nil {
-		ctx.JSON(http.StatusBadRequest, gin.H{"error": "could not parse job data: " + err.Error()})
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "could not parse job data"})
 		return
 	}
 
 	err = job.Save()
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "could not save job: " + err.Error()})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "could not save job:"})
 		return
 	}
 
