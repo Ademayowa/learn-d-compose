@@ -14,8 +14,8 @@ func RegisterRoutes(server *gin.Engine) {
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,           // Allow cookies or auth headers
-		MaxAge:           12 * time.Hour, // Cache preflight for 12 hours
+		AllowCredentials: true,
+		MaxAge:           12 * time.Hour,
 	}))
 
 	// Define routes
